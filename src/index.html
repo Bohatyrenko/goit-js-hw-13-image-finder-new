@@ -11,19 +11,32 @@
     />
   </head>
   <body>
-    <form class="search-form" id="search-form">
-      <input
-        type="text"
-        name="query"
-        autocomplete="off"
-        placeholder="Search images..."
-      />
-      <button type="submit" data-action="start">Search</button>
-    </form>
+    <div class="search-box">
+      <form class="search-form" id="search-form">
+        <input
+          class="input-form"
+          type="text"
+          name="query"
+          autocomplete="off"
+          placeholder="Search images..."
+        />
+        <button type="submit" class="pressed-button" data-action="start">
+          Search
+        </button>
+      </form>
+    </div>
 
     <ul class="gallery">
       <!-- Список <li> с карточками изображений -->
     </ul>
-    <button type="button" data-action="load-more">Load more</button>
+    <!-- <div class="load-more-box"> -->
+    <button
+      type="button"
+      class="pressed-button load-more"
+      data-action="load-more"
+    >
+      Load more
+    </button>
+    <!-- </div> -->
   </body>
 </html>
