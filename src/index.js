@@ -9,7 +9,7 @@ const refs = {
 };
 const pixabayApiService = new PixabayApiService();
 
-refs.searchForm.addEventListener('click', onSearch);
+refs.searchForm.addEventListener('submit', onSearch);
 refs.loadMoreBtn.addEventListener('click', onLoadMore);
 
 function onSearch(e) {
@@ -26,6 +26,8 @@ function onSearch(e) {
     appendHitsMarkup(hits);
   });
 }
+
+function windowsScrolling() {}
 
 function onLoadMore() {
   pixabayApiService.fetchArticles().then(appendHitsMarkup);
