@@ -27,15 +27,26 @@ function onSearch(e) {
   });
 }
 
-function windowsScrolling() {}
+async function onLoadMore(e) {
+  const result = await pixabayApiService.fetchArticles();
+  appendHitsMarkup(result);
 
-function onLoadMore() {
-  pixabayApiService.fetchArticles().then(appendHitsMarkup);
+  window.scrollTo({
+    top: e.pageY,
+    left: 0,
+    behavior: 'smooth',
+  });
 }
+// function windowsScrolling() {}
+
+// function onLoadMore() {
+//   pixabayApiService.fetchArticles().then(appendHitsMarkup);
+// }
 
 function appendHitsMarkup(hits) {
   refs.gallery.insertAdjacentHTML('beforeend', hitsTbs(hits));
 }
+
 function clearGallery() {
   refs.gallery.innerHTML = '';
 }
