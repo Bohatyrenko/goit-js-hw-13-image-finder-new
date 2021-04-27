@@ -20,9 +20,7 @@
           autocomplete="off"
           placeholder="Search images..."
         />
-        <button type="submit" class="pressed-button" data-action="start">
-          Search
-        </button>
+        <button type="submit" class="button" data-action="start">Search</button>
       </form>
     </div>
 
@@ -32,10 +30,16 @@
     <!-- <div class="load-more-box"> -->
     <button
       type="button"
-      class="pressed-button load-more"
+      class="button load-more btn-js"
       data-action="load-more"
     >
-      Load more
+      <span
+        class="spinner-border spinner-border-sm spinner is-hidden"
+        role="status"
+        aria-hidden="true"
+      ></span>
+
+      <span class="label">Load more</span>
     </button>
     <!-- </div> -->
   </body>
